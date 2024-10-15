@@ -125,12 +125,25 @@ h3 {
 footer {
     background-color: black;
     color: black;
-    width: 97%;
+    width: 98%;
     height: auto;
     margin: auto;
-    padding: 2.5vh 20px;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
+}
+
+.footercontainer {
+    width: auto;
+    height: auto;
+    padding: 15px 20px;
+}
+
+.line {
+    /* width: 98%; */
+    width: 120px;
+    height: 2px;
+    background-color: white;
+    margin: auto;
 }
 
 .social {
@@ -145,7 +158,14 @@ footer {
     gap: 2px;
 }
 
-.contact {
+.contact-logo {
+    background-color: transparent;
     box-sizing: border-box;
-    border-radius: 50px;
+    border-radius: 20%;
+    border: 5px solid transparent;
+}
+
+.contact-logo:hover {
+    background-color: whitesmoke;
+    border: 5px solid whitesmoke;
 }
