@@ -107,6 +107,9 @@ h3 {
 .container-1 {
     color: black;
     background-color: whitesmoke;
+    /* background-image: url(https://kyle-inc.github.io/resource/background/background-1.webp);
+    background-size: cover;
+    background-repeat: no-repeat; */
     padding-top: 33vh;
     padding-bottom: 33vh;
 }
@@ -128,8 +131,14 @@ footer {
     width: 98%;
     height: auto;
     margin: auto;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
+    border-radius: 20px;
+    /* border-top-left-radius: 50px;
+    border-top-right-radius: 50px; */
+}
+
+.floating-footer {
+    width: 100%;
+    height: 1vw;
 }
 
 .footercontainer {
@@ -156,6 +165,7 @@ footer {
     align-content: center;
     flex-wrap: wrap;
     gap: 2px;
+    padding: 20px 0px;
 }
 
 .contact-logo {
@@ -166,6 +176,15 @@ footer {
 }
 
 .contact-logo:hover {
-    background-color: whitesmoke;
-    border: 5px solid whitesmoke;
+    border: 5px solid transparent;
+}
+
+.gmail:hover {
+    background-color: white;
+}
+.linkedin:hover {
+    background-color: #0077B5;
+}
+.twitter:hover {
+    background-color: #1DA1F2;
 }
