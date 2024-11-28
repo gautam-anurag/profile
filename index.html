@@ -24,6 +24,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    
+
+    <!-- CSS For fade-in-out effect -->
+    <link rel="stylesheet" href="https://kyle-inc.github.io/resource/effect-fade-in-out/fade-in-out.css">
 
     <title>My Story | Anurag Gautam</title>
     <link rel="icon" href="https://kyle-inc.github.io/resource/identity/identity-icon.png" type="image/x-icon">
@@ -37,6 +41,16 @@
 </head>
 
 <body>
+
+    <div id="fadein"></div>
+    <script src="https://kyle-inc.github.io/resource/effect-fade-in-out/fade-in-out.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            setTimeout(function () {
+                document.getElementById("fadein").remove();
+            }, 1000);
+        };
+    </script>
 
     <header>
         <div class="name">Anurag Gautam</div>
