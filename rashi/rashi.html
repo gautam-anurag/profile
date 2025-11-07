@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+
+    <!-- Poppins @ Google Fonts -->
+    <!-- font-family: 'Poppins', sans-serif; -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- Fredoka @ Google Fonts -->
+    <!-- font-family: 'Fredoka', sans-serif; -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
+
+    <!-- Ununtu @ Google Fonts -->
+    <!-- font-family: 'Ubuntu', sans-serif; -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+
+    <!-- Merriweather @ Google Fonts -->
+    <!-- font-family: "Merriweather", serif; -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
+
+    <!-- Lora @ Google Fonts -->
+     <!-- font-family: "Lora", serif; -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    
+
+    <!-- CSS For fade-in-out effect -->
+    <link rel="stylesheet" href="https://kyle-inc.github.io/resource/effect-fade-in-out/fade-in-out.css">
+
+    <title>Rashi Writes</title>
+    <link rel="icon" href="https://atikle.github.io/home/rashi-logo.png" type="image/x-icon">
+
+    <style>
+        ::selection {
+            color: black;
+            background: white;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        :root {
+            --transition-speed-fast: 0.2s; /* For quick interactions like hamburger click */
+            --transition-speed-normal: 0.3s; /* For standard hovers */
+            --transition-speed-slow: 0.4s; /* For menu slide-in/out */
+
+            /* Smoother Cubic-Bezier Functions (Google/Apple-like) */
+            --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1); /* Aggressive acceleration/deceleration */
+            --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth deceleration */
+            
+            --navbar-background-1: white;
+            --background-1: white;
+            --background-2: whitesmoke;
+            --background-3: black;
+            --background-4: #f0f2f5;
+            --background-5: #eaebf5;
+            --card-background-1: white;
+            --card-background-2: whitesmoke;
+            --text-color-1: #050505;
+            --text-color-2: #65676b;
+            --text-color-3: white;
+            --shadow-1: 0 2px 6px 0 rgba(136, 148, 171, 0.2), 0 24px 20px -24px rgba(71, 82, 107, 0.1);
+            --shadow-2: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+            --button-background-1: #1877f2;
+            --button-background-2: #e4e6eb;
+            --button-background-3: #3d42df;
+            --button-text-1: #ffffff;
+            --button-text-2: #050505;
+            --button-text-3: #ffffff;
+            --hover-overlay: rgba(0, 0, 0, 0.05);
+        }
+
+        body.dark-mode {
+            --navbar-background-1: #242526;
+            --background-1: black;
+            --background-2: black;
+            --background-3: white;
+            --background-4: #242526;
+            --background-5: #18191a;
+            --card-background-1: #242526; /* #3c3f56 */
+            --card-background-2: #242526; /* #3c3f56 */
+            --text-color-1: white;
+            --text-color-2: #b0b3b8;
+            --text-color-3: black;
+            --shadow-1: 0px 0px 8px 0px #282b33;
+            --shadow-2: 0 2px 8px rgba(0, 0, 0, 0.25);
+
+            --button-background-1: #2d88ff;
+            --button-background-2: #3a3b3c;
+            --button-background-3: #6f74ff;
+            --button-text-1: #ffffff;
+            --button-text-2: #e4e6eb;
+            --button-text-3: #ffffff;
+            --hover-overlay: rgba(255, 255, 255, 0.08);
+        }
+
+
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            background-color: whitesmoke;
+            color: black;
+            border: 0;
+            top: 0;
+            font-family: 'Poppins', sans-serif;
+            user-select: none;
+        }
+
+        .a {
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        header {
+            width: 100%;
+            position: fixed;
+            height: auto;
+            background-color: white;
+            margin-top: 0px;
+        }
+
+        .name-container {
+            min-width: 300px;
+            max-width: 1650px;
+            margin: auto;
+            height: auto;
+        }
+
+        div.name {
+            width: 300px;
+            font-size: 34px;
+            font-weight: 900;
+            padding: 6px 15px;
+            background: linear-gradient(90.1deg, rgb(255, 85, 85) 0.1%, rgb(85, 85, 255) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 600;
+        }
+
+        h3 {
+            font-size: 2.5vh;
+            font-weight: 500;
+        }
+
+        .div-1 {
+            padding-top: 00px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            background-color: #98d9e1;
+            background-image: linear-gradient(315deg, #98d9e1 0%, #d6aed6 74%);
+        }
+
+        .intro-img {
+            width: auto;
+            max-width: 825px;
+            min-width: 300px;
+        }
+
+        .intro {
+            font-size: 4vh;
+            font-weight: 700;
+            width: auto;
+            padding: 40px 40px;
+            margin: auto;
+            color: black;
+            background-color: white;
+            /* background-color: #98d9e1;
+            background-image: linear-gradient(315deg, #98d9e1 0%, #d6aed6 74%); */
+        }
+
+        @media screen and (max-width:768px) {
+            .intro {
+                color: white;
+                background-color: #98d9e1;
+                background-image: linear-gradient(315deg, #98d9e1 0%, #d6aed6 74%);
+            }
+        }
+
+        .container-1 {
+            font-family: "Merriweather", serif;
+            color: black;
+            text-align: center;
+            padding: 70px 0px;
+            text-decoration: underline;
+            text-decoration-color: crimson;
+            text-decoration-thickness: 5px;
+            text-underline-offset: 8px;
+            line-height: 50px;
+        }
+
+        .content-1 {
+            background-color: transparent;
+            color: black;
+            width: 90%;
+            margin: auto;
+        }
+
+        .heading-1 {
+            padding: 40px 20px;
+        }
+
+
+
+        .writing-container {
+            margin-top: 50px;
+            padding-bottom: 50px;
+            max-width: 1700px;
+            margin: auto;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            width: 92%;
+            margin: auto;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            gap: 40px;
+        }
+
+        .column {
+            flex: 30%;
+            min-width: 300px;
+            height: auto;
+            /* padding: 5px 5px; */
+            border-radius: 20px;
+            background-color: var(--card-background-1);
+            box-shadow: var(--shadow-1);
+            display: flex;
+            align-items: center
+        }
+
+        .column-content {
+            padding: 30px 20px;
+        }
+
+        .column img {
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            vertical-align: middle;
+            width: 100%;
+        }
+
+        .column-heading {
+            color: var(--text-color-1);
+            font-size: 20px;
+            font-weight: 900;
+            line-height: 27px;
+            padding: 0px 0px;
+            font-family: "Lora", serif;
+        }
+
+        .column-text {
+            color: var(--text-color-1);
+            font-size: 17px;
+            padding: 15px 5px;
+        }
+
+        .writer-placeholder {
+            color: gray;
+            font-weight: 700;
+            margin-top: 20px;
+            padding: 0px 0px;
+        }
+
+        /* Responsive layout - makes a two column-layout instead of four columns */
+        @media screen and (max-width: 800px) {
+            .column {
+                flex: 50%;
+                max-width: 50%;
+            }
+        }
+
+        /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 600px) {
+            .column {
+                flex: 100%;
+                max-width: 100%;
+            }
+        }
+
+
+
+
+        footer {
+            background-color: black;
+            color: black;
+            width: 100%;
+            height: auto;
+            margin: auto;
+            bottom: 0px;
+            margin-bottom: 0px;
+            border-top-left-radius: 22px;
+            border-top-right-radius: 22px;
+        }
+
+        .floating-footer {
+            width: 100%;
+            height: 1vw;
+        }
+
+        .footercontainer {
+            width: auto;
+            height: auto;
+            /* padding: 15px 20px; */
+            padding: 2px 20px;
+        }
+
+        .social {
+            background-color: transparent;
+            width: 60%;
+            max-width: 200px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-content: center;
+            flex-wrap: wrap;
+            gap: 2px;
+            padding: 20px 0px;
+        }
+
+        .contact-logo {
+            background-color: transparent;
+            box-sizing: border-box;
+            border-radius: 20%;
+            border: 5px solid transparent;
+        }
+
+        .contact-logo:hover {
+            border: 5px solid transparent;
+        }
+
+        .gmail:hover {
+            background-color: white;
+        }
+        .linkedin:hover {
+            background-color: #0077B5;
+        }
+        .twitter:hover {
+            background-color: #1DA1F2;
+        }
+        .instagram:hover {
+            background-color: white;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div id="fadein"></div>
+    <script src="https://kyle-inc.github.io/resource/effect-fade-in-out/fade-in-out.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            setTimeout(function () {
+                document.getElementById("fadein").remove();
+            }, 1000);
+        };
+    </script>
+
+    <header>
+        <div class="name-container">
+            <div class="name">Rashi Writes</div>
+        </div>
+    </header>
+
+    <div style="max-width: 1650px; margin: auto;">
+
+        <div class="div-1" id="ProtectedDiv">
+            <img src="https://atikle.github.io/home/rashi.jpg" class="intro-img" alt="">
+            <div class="intro">
+                Hi, I am Rashi Deepak!
+            </div>
+        </div>
+
+        <div class="container-1">
+            <h1 class="heading-1">See what I have written</h1>
+        </div>
+
+        <div class="writing-container">
+        
+            <div class="row">
+                
+                <div class="column">
+                    <!-- <img src=""> -->
+                    <div class="column-content">
+                        <div class="column-heading">
+                            Nothing is more attractive than vibing with yourself..!!!!
+                        </div>
+                        <!-- <div class="column-text"></div> -->
+                        <div class="writer-placeholder">rashi_.writes</div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <!-- <img src=""> -->
+                    <div class="column-content">
+                        <div class="column-heading">
+                            The journey of a thousands miles starts with the single step!!
+                        </div>
+                        <!-- <div class="column-text"></div> -->
+                        <div class="writer-placeholder">rashi_.writes</div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <!-- <img src=""> -->
+                    <div class="column-content">
+                        <div class="column-heading">
+                            There is nothing more beautiful than growing at your own pace...
+                        </div>
+                        <!-- <div class="column-text"></div> -->
+                        <div class="writer-placeholder">rashi_.writes</div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <!-- <img src=""> -->
+                    <div class="column-content">
+                        <div class="column-heading">
+                            The best way to avoid disappointment is to not expect anything from anyone.
+                        </div>
+                        <!-- <div class="column-text"></div> -->
+                        <div class="writer-placeholder">rashi_.writes</div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <!-- <img src=""> -->
+                    <div class="column-content">
+                        <div class="column-heading">
+                            There is a difference between being liked and being valued. <br>
+                            A lot of people like you. <br>
+                            Not many value you.
+                        </div>
+                        <!-- <div class="column-text"></div> -->
+                        <div class="writer-placeholder">rashi_.writes</div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <!-- <img src=""> -->
+                    <div class="column-content">
+                        <div class="column-heading">
+                            DON'T COMPARE YOUR LIFE TO OTHERS. <br>
+                            THERE'S NO COMPARSION BETWEEN THE SUN AND THE MOON. <br>
+                            THEY SHINE WHEN IT'S THEIR TIME.
+                        </div>
+                        <!-- <div class="column-text"></div> -->
+                        <div class="writer-placeholder">rashi_.writes</div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <!-- <img src=""> -->
+                    <div class="column-content">
+                        <div class="column-heading">
+                            I have a big heart, andsometimes I hate it,
+                            I overthink, apologize too much, forgive
+                            too easily, worry too much about people
+                            who don't care about me, I feel guilty for
+                            things I have no controlover, and I feel
+                            lonely because I'm afraid I won't find
+                            anyone who loves me as deeply as l love.
+                        </div>
+                        <!-- <div class="column-text"></div> -->
+                        <div class="writer-placeholder">rashi_.writes</div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <!-- <img src=""> -->
+                    <div class="column-content">
+                        <div class="column-heading">
+                            I ask myself: are defeats necessary ? <br>
+                            Well, necessary or not, they happen. <br>
+                            When we first begin fighting for our dream, we have no experience and make many mistakes. <br>
+                            The secret of life, though, is to fall seven times and to get up EIGHT TIMES..!! <br>
+                        </div>
+                        <!-- <div class="column-text"></div> -->
+                        <div class="writer-placeholder">rashi_.writes</div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <!-- <img src=""> -->
+                    <div class="column-content">
+                        <div class="column-heading">
+                            I think my biggest red flag is that, I never
+                            know how to talk about my feelings.
+                            When I'm going through something, I tend
+                            to stop talking to everyone till I feel okay
+                            again. I talk to myself in my head a lot
+                            about how I feel and I explain it so well, out
+                            getting it to actually come out my mouth is
+                            so hard. But when I'm okay I'll start
+                            communicating again like nothing happened. <br>
+                            It's not me being off with you, I just deal things better when I'm alone.
+                        </div>
+                        <!-- <div class="column-text"></div> -->
+                        <div class="writer-placeholder">rashi_.writes</div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <footer>
+            <div class="footercontainer">
+                <!-- <div class="line" style="margin-bottom: 25px;"></div> -->
+                <div class="social">
+                    <a class="contact" href="https://www.linkedin.com/in/rashi-d-8a6781332/"><img class="contact-logo linkedin" style="width: 40px;" src="https://kyle-inc.github.io/resource/linkedin.png" alt="">
+                    <a class="contact" href="https://www.instagram.com/rashi_.writes?igsh=aXF2aDZnaGI5dDM3"><img class="contact-logo instagram" style="width: 40px;" src="https://gautam-anurag.github.io/resource/instagram.png" alt="">
+                </div>
+            </div>
+        </footer>
+    
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const protectedDiv = document.getElementById('ProtectedDiv');
+
+            protectedDiv.addEventListener('contextmenu', function(e) {
+            e.preventDefault(); // Prevent the default right-click context menu
+            console.log("Right-click attempted on the protected div!");
+            });
+        });
+    </script>
+
+</body>
+
+</html>

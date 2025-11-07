@@ -1,97 +1,800 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://gautam-anurag.github.io/profile/"> <!-- SEO: UPDATE THIS WITH YOUR DOMAIN -->
 
-    <!-- Poppins @ Google Fonts -->
-    <!-- font-family: 'Poppins', sans-serif; -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-
-    <!-- Fredoka @ Google Fonts -->
-    <!-- font-family: 'Fredoka', sans-serif; -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
-
-    <!-- Ununtu @ Google Fonts -->
-    <!-- font-family: 'Ubuntu', sans-serif; -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <!-- 
+      SEO: Primary Title Tag. Clear and concise.
+    -->
+    <title>Anurag Gautam</title>
     
+    <!-- 
+      SEO: Meta Description. This is crucial for search results.
+      I've included all your target keywords naturally.
+    -->
+    <meta name="description" content="Meet Anurag Gautam, a passionate web developer from Rawatbhata. Explore the portfolio of Anurag, an Allen alumnus, and follow his journey in the world of web development.">
+    
+    <!-- 
+      SEO: Meta Keywords. While less important for Google, still good practice.
+    -->
+    <meta name="keywords" content="Anurag Gautam, Anurag, Anurag Gautam Rawatbhata, Anurag Gautam Allen, Web Developer, Portfolio, Anurag Developer">
+    
+    <!-- 
+      SEO: Author
+    -->
+    <meta name="author" content="Anurag Gautam">
 
-    <!-- CSS For fade-in-out effect -->
-    <link rel="stylesheet" href="https://kyle-inc.github.io/resource/effect-fade-in-out/fade-in-out.css">
+    <!-- 
+      SEO: Canonical URL. Prevents duplicate content issues.
+      Replace 'https://anurag-gautam.dev' with your actual domain when you have one.
+    -->
+    <link rel="canonical" href="https://anurag-gautam.dev"> <!-- SEO: UPDATE THIS WITH YOUR DOMAIN -->
 
-    <title>My Story | Anurag Gautam</title>
-    <link rel="icon" href="https://kyle-inc.github.io/resource/identity/identity-icon.png" type="image/x-icon">
+    <!-- 
+      SEO: Open Graph Tags (for social media sharing, e.g., Facebook, LinkedIn)
+    -->
+    <meta property="og:title" content="Anurag Gautam | Web Developer">
+    <meta property="og:description" content="Passionate web developer from Rawatbhata, exploring the digital world.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gautam-anurag.github.io/profile/"> <!-- SEO: UPDATE THIS WITH YOUR DOMAIN -->
+    <meta property="og:image" content="https://gautam-anurag.github.io/profile/social-preview.png"> <!-- SEO: Create and upload a 1200x630px image -->
 
-    <link rel="stylesheet" href="profile.css">
+    <!-- 
+      SEO: Twitter Card Tags (for Twitter sharing)
+    -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Anurag Gautam | Web Developer">
+    <meta name="twitter:description" content="Passionate web developer from Rawatbhata, exploring the digital world.">
+    <meta name="twitter:image" content="https://gautam-anurag.github.io/profile/social-preview.png"> <!-- SEO: Use the same 1200x630px image -->
+
+    <!-- 
+      Performance & PWA: Theme color for mobile browser chrome
+    -->
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
+
+    <!-- 
+      Performance: Preconnect to Google Fonts. This speeds up the font download.
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- 
+      Performance: Google Fonts with display=swap.
+      This tells the browser to show text immediately with a fallback font,
+      then swap to the Google Font when it loads. This fixes "render-blocking"
+      and "invisible text" issues, which is a major boost for web.dev scores.
+    -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- 
+      SEO: Structured Data (JSON-LD).
+      This is a *massive* SEO enhancement. It explicitly tells Google
+      who you are, what you do, and associates you with your social links
+      and the keywords "Anurag Gautam" and "Rawatbhata".
+    -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Anurag Gautam",
+      "alternateName": "Anurag",
+      "url": "https://gautam-anurag.github.io/profile/",
+      "jobTitle": "Web Developer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Self-Employed"
+      },
+      "homeLocation": {
+        "@type": "Place",
+        "name": "Rawatbhata, Rajasthan"
+      },
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Allen Career Institute"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/gautam-anurag"
+      ]
+    }
+    </script>
+
 
     <style>
+        /* --- CSS Variables (Colors & Fonts) --- */
+        :root {
+            --font-main: 'Inter', sans-serif;
+            
+            /* Accent Palette */
+            --color-accent-blue: #005A9C;      /* Royal Blue */
+            --color-accent-green: #004D40;     /* Dark Green */
+            --color-accent-burgundy: #800020;  /* Burgundy */
 
+            /* Light Mode Colors (White/Black/Gray Base) */
+            --color-bg-primary: #ffffff;      /* Pure White */
+            --color-bg-secondary: rgba(255, 255, 255, 0.8); /* White/80 for backdrop */
+            --color-bg-card: #f9f9f9;         /* Off-white */
+            --color-text-heading: #111111;    /* Near-black */
+            --color-text-primary: #333333;    /* Dark Grey */
+            --color-text-secondary: #555555;  /* Medium Grey */
+            --color-text-muted: #777777;      /* Grey */
+            
+            /* Primary Brand Color (from accent palette) */
+            --color-brand-primary: var(--color-accent-blue);
+            --color-brand-hover: #004375;     /* Darker Royal Blue */
+            --color-brand-accent: var(--color-accent-blue);
+            
+            /* Icon Colors (from accent palette) */
+            --color-icon: var(--color-text-muted);
+            --color-icon-hover-amber: #f59e0b;     /* amber-500 */
+            --color-icon-hover-mail: var(--color-accent-burgundy);
+            --color-icon-hover-linkedin: var(--color-accent-blue);
+            --color-icon-hover-twitter: var(--color-accent-green);
+            
+            /* Subtle shadows for luxury feel */
+            --color-shadow-sm: rgba(0, 0, 0, 0.02);
+            --color-shadow-xl: rgba(0, 0, 0, 0.05);
+            
+            --color-scrollbar-track: #f1f1f1;  
+            --color-scrollbar-thumb: #c1c1c1;
+            --color-scrollbar-thumb-hover: #a8a8a8;
+            --color-loader-bg: #ffffff;       /* Pure White */
+        }
+
+        html.dark {
+            /* Dark Mode Colors (Black/Gray Base) */
+            --color-bg-primary: #121212;      /* Near-black */
+            --color-bg-secondary: rgba(18, 18, 18, 0.8); /* Dark/80 for backdrop */
+            --color-bg-card: #1E1E1E;         /* Dark Grey Card */
+            --color-text-heading: #FFFFFF;    /* white */
+            --color-text-primary: #E0E0E0;    /* Light Grey */
+            --color-text-secondary: #A0A0A0;  /* Medium Grey */
+            --color-text-muted: #777777;      /* Grey */
+            
+            /* Primary Brand Color (Dark Mode) */
+            --color-brand-primary: #3182CE;   /* Lighter Royal Blue */
+            --color-brand-hover: #2B6CB0;     /* Darker Lighter Blue */
+            --color-brand-accent: #3182CE;    /* Lighter Royal Blue */
+            
+            /* Icon Colors (Dark Mode) */
+            --color-icon: var(--color-text-secondary);
+            --color-icon-hover-amber: #fcd34d; /* amber-400 */
+            --color-icon-hover-mail: #E53E3E;  /* Lighter Red/Burgundy */
+            --color-icon-hover-linkedin: #3182CE; /* Lighter Blue */
+            --color-icon-hover-twitter: #38A169; /* Lighter Green */
+
+            /* Dark shadows */
+            --color-shadow-sm: rgba(0, 0, 0, 0.15);
+            --color-shadow-xl: rgba(0, 0, 0, 0.2);
+            
+            --color-scrollbar-track: #2D2D2D;
+            --color-scrollbar-thumb: #4A4A4A;
+            --color-scrollbar-thumb-hover: #717171;
+            --color-loader-bg: #121212;       /* Near-black */
+        }
+
+        /* --- Base & Reset Styles --- */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--color-bg-primary);
+            color: var(--color-text-primary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            /* Performance: Improves scrolling performance */
+            overflow-x: hidden; 
+        }
+
+        img, svg {
+            display: block;
+            max-width: 100%;
+        }
+
+        button {
+            font-family: inherit;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* Accessibility: Skip Link styles
+          This is a 'screen-reader only' class that becomes visible on focus.
+          This is a major accessibility win.
+        */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+        .sr-only:focus,
+        .sr-only:active {
+            position: static;
+            width: auto;
+            height: auto;
+            padding: 1rem 1.5rem;
+            margin: 1rem;
+            overflow: visible;
+            clip: auto;
+            white-space: normal;
+            background-color: var(--color-brand-primary);
+            color: #ffffff;
+            font-weight: 700;
+            border-radius: 0.5rem;
+            z-index: 1000;
+            text-decoration: none;
+        }
+
+
+        /* --- Utility Classes --- */
+        .hidden {
+            display: none !important;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 80rem; /* 1280px */
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;  /* 16px */
+            padding-right: 1rem; /* 16px */
+        }
+
+        @media (min-width: 640px) {
+            .container {
+                padding-left: 1.5rem; /* 24px */
+                padding-right: 1.5rem; /* 24px */
+            }
+        }
+        @media (min-width: 1024px) {
+            .container {
+                padding-left: 2rem; /* 32px */
+                padding-right: 2rem; /* 32px */
+            }
+        }
+
+        /* --- Scrollbar --- */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--color-scrollbar-track);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--color-scrollbar-thumb);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--color-scrollbar-thumb-hover);
+        }
+
+        /* --- Page Loader & Fade-in --- */
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--color-loader-bg);
+            z-index: 9999;
+            transition: opacity 0.8s ease-out, visibility 0.8s ease-out;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        #page-content {
+            opacity: 0;
+            /* Performance: Will-change hints to the browser about upcoming changes */
+            will-change: opacity;
+        }
+
+        /* --- Header / Navigation --- */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            width: 100%;
+            background-color: var(--color-bg-secondary);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 1px 2px 0 var(--color-shadow-sm);
+            transition: background-color 0.3s ease;
+        }
+
+        .site-header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 4rem; /* 64px */
+        }
+
+        .site-header .logo {
+            font-size: 1.5rem; /* 24px -- MOBILE FIX: Was 2rem */
+            font-weight: 700; /* Ubuntu bold */
+            font-family: 'Ubuntu', sans-serif;
+        }
+        
+        /* Custom gradient text using the new accent palette */
+        .name-gradient {
+            /* background: linear-gradient(90.1deg, var(--color-accent-burgundy) 0.1%, var(--color-accent-green) 50%, var(--color-accent-blue) 100%); */
+            background: linear-gradient(90.1deg, rgb(255, 85, 85) 0.1%, rgb(85, 85, 255) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem; /* 16px */
+        }
+
+        .header-actions a,
+        .header-actions button {
+            color: var(--color-icon);
+            transition: color 0.3s ease;
+        }
+        .header-actions a svg,
+        .header-actions button svg {
+            width: 24px;
+            height: 24px;
+        }
+        
+        /* Icon hover colors using the new accent palette */
+        .header-actions a[title="Email"]:hover { color: var(--color-icon-hover-mail); }
+        .header-actions a[title="LinkedIn"]:hover { color: var(--color-icon-hover-linkedin); }
+        .header-actions a[title*="Twitter"]:hover { color: var(--color-icon-hover-twitter); }
+        .header-actions button[id="theme-toggle"]:hover { color: var(--color-icon-hover-amber); }
+        
+        /* --- Main Content --- */
+        main {
+            width: 100%;
+        }
+
+        /* --- Hero Section --- */
+        #hero {
+            min-height: calc(100vh - 4rem); /* 100vh - header height */
+            max-width: 1500px;
+            margin: auto;
+            display: flex;
+            /* MOBILE FIX: Align content to the top */
+            align-items: flex-start; /* Was center */
+            justify-content: center;
+            /* MOBILE FIX: Add padding top, keep other padding */
+            padding: 4rem 1rem 1rem 1rem; /* Was 1rem */
+            /* New background image properties */
+            /* FIX: Renamed image file to remove spaces/parentheses */
+            background-image: url('anurag-sketch.png'); /* Performance: Ensure this image is optimized (e.g., compressed PNG or WebP) */
+            background-repeat: no-repeat;
+            /* MOBILE FIX: Smaller and positioned at the bottom */
+            background-size: 14rem; /* Was 16rem */
+            background-position: center bottom 2rem; /* Was center 75% */
+            /* Performance: will-change for background */
+            will-change: background-position, background-size;
+        }
+
+        #hero .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem; /* 32px */
+            align-items: center; /* Was 'end' - back to 'center' */
+        }
+
+        .hero-text {
+            text-align: center;
+        }
+
+        .hero-text .greeting {
+            font-size: 1.125rem; /* 18px */
+            font-weight: 500;
+            color: var(--color-brand-accent);
+        }
+
+        .hero-text h1 {
+            margin-top: 0.5rem; /* 8px */
+            font-size: 2.5rem; /* 40px -- MOBILE FIX: Was 3rem */
+            font-weight: 900;
+            color: var(--color-text-heading);
+            line-height: 1.1;
+        }
+
+        .hero-text .subtitle {
+            margin-top: 1rem; /* 16px */
+            font-size: 1.25rem; /* 20px */
+            color: var(--color-text-secondary);
+        }
+
+        .hero-text .cta-button {
+            display: inline-block;
+            margin-top: 2rem; /* 32px */
+            background-color: var(--color-brand-primary);
+            color: #ffffff;
+            font-weight: 700;
+            padding: 0.75rem 2rem; /* 12px 32px */
+            border-radius: 0.5rem; /* 8px */
+            font-size: 1.125rem; /* 18px */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            /* Performance: will-change */
+            will-change: transform, box-shadow;
+        }
+        
+        .hero-text .cta-button:hover {
+            background-color: var(--color-brand-hover);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            display: none; /* Hide the empty div on mobile */
+            justify-content: center;
+        }
+        
+        /* REMOVED the entire .hero-image img block */
+        
+        /* Hero Responsive */
+        @media (min-width: 640px) { /* sm */
+            .site-header .logo {
+                font-size: 2rem; /* 32px -- Restore logo size */
+            }
+            #hero {
+                /* MOBILE FIX: Adjust tablet size and position */
+                background-size: 18rem; /* Was 20rem */
+                background-position: center bottom 3rem; /* Was center 70% */
+            }
+            .hero-text h1 {
+                font-size: 3.75rem; /* 60px */
+            }
+            /* REMOVED .hero-image img block */
+        }
+        
+        @media (min-width: 768px) { /* md */
+            #hero {
+                /* On desktop, move bg to the right and bottom */
+                background-size: 24rem;
+                background-position: right 4rem bottom 0;
+                /* MOBILE FIX: Restore original padding and alignment for desktop grid */
+                align-items: center; /* Back to center */
+                padding: 1rem; /* Back to original padding */
+            }
+            #hero .container {
+                grid-template-columns: 1fr 1fr;
+                gap: 4rem; /* 64px */
+            }
+            .hero-text {
+                text-align: left;
+            }
+            .hero-image {
+                display: block; /* Show the empty div to create the 2nd column */
+            }
+        }
+        
+        @media (min-width: 1024px) { /* lg */
+            #hero {
+                background-size: 28rem; /* A bit larger for big screens */
+                background-position: right 6rem bottom 0;
+            }
+            .hero-text h1 {
+                font-size: 4.5rem; /* 72px */
+            }
+             /* REMOVED .hero-image img block */
+        }
+
+        /* --- About Section --- */
+        #about {
+            padding: 4rem 0; /* 64px -- MOBILE FIX: Was 6rem */
+            /* Swapped bg-card and bg-primary for better contrast */
+            background-color: var(--color-bg-card); 
+            transition: background-color 0.3s ease;
+        }
+
+        #about .container {
+            max-width: 48rem; /* 768px */
+            text-align: center;
+        }
+
+        #about h2 {
+            font-size: 1.75rem; /* 28px -- MOBILE FIX: Was 2.25rem */
+            font-weight: 900;
+            color: var(--color-text-heading);
+        }
+
+        .about-card {
+            margin-top: 2.5rem; /* 40px */
+            padding: 1.5rem; /* 24px -- MOBILE FIX: Was 2rem */
+            background-color: var(--color-bg-primary); /* Use primary bg for card */
+            border-radius: 0.75rem; /* 12px */
+            box-shadow: 0 20px 25px -5px var(--color-shadow-xl), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transition: background-color 0.3s ease;
+        }
+
+        .about-card h3 {
+            font-size: 1.25rem; /* 20px -- MOBILE FIX: Was 1.5rem */
+            font-weight: 700;
+            color: var(--color-text-primary);
+        }
+        
+        .about-card p {
+            margin-top: 1rem; /* 16px */
+            font-size: 1.125rem; /* 18px */
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+        
+        .about-card br {
+            display: none;
+        }
+
+        /* About Responsive */
+        @media (min-width: 640px) {
+            #about {
+                padding: 6rem 0; /* Restore padding for larger screens */
+            }
+            #about h2 {
+                font-size: 3rem; /* 48px */
+            }
+            .about-card {
+                padding: 2rem; /* Restore padding */
+            }
+            .about-card h3 {
+                font-size: 1.5rem; /* 24px -- Restore size */
+            }
+            .about-card br {
+                display: block;
+            }
+        }
+        
+        /* --- Footer --- */
+        .site-footer {
+            padding: 2rem 0;
+            background-color: var(--color-bg-primary);
+            transition: background-color 0.3s ease;
+        }
+        
+        .site-footer .container {
+            text-align: center;
+        }
+
+        .site-footer p {
+            color: var(--color-text-muted);
+        }
+        
     </style>
-
 </head>
 
 <body>
 
-    <div id="fadein"></div>
-    <script src="https://kyle-inc.github.io/resource/effect-fade-in-out/fade-in-out.js" crossorigin="anonymous"></script>
-    <script type="text/javascript">
+    <!-- 
+      Accessibility: Skip to main content link.
+      This is the first focusable element on the page, allowing
+      keyboard users to skip the navigation. Crucial for web.dev scores.
+    -->
+    <a href="#main-content" class="sr-only">
+        Skip to main content
+    </a>
+
+    <!-- Page Loader -->
+    <div id="loader"></div>
+
+    <!-- Page Content (initially hidden, shown by JS) -->
+    <div id="page-content">
+
+        <!-- Header / Navigation -->
+        <header class="site-header">
+            <nav class="container">
+                <!-- Name -->
+                <div>
+                    <a href="#" class="logo name-gradient">
+                        Anurag Gautam
+                    </a>
+                </div>
+                
+                <!-- Social Links & Theme Toggle -->
+                <div class="header-actions">
+                    <!-- Accessibility: Added aria-label for screen readers -->
+                    <a href="mailto:kyle.web.in@gmail.com" title="Email" aria-label="Email Anurag Gautam">
+                        <!-- Mail Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    </a>
+                    <!-- Accessibility: Added aria-label for screen readers -->
+                    <a href="https://www.linkedin.com/in/gautam-anurag" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="View Anurag Gautam's LinkedIn profile">
+                        <!-- LinkedIn Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                    <!-- Accessibility: Added aria-label for screen readers -->
+                    <a href="#" title="Twitter (link not provided)" aria-label="View Anurag Gautam's Twitter profile (link pending)">
+                        <!-- Twitter Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                    </a>
+
+                    <!-- Dark Mode Toggle -->
+                    <!-- Accessibility: Added aria-label for screen readers -->
+                    <button id="theme-toggle" title="Toggle theme" aria-label="Toggle dark or light theme">
+                        <svg id="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden" role="img"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                        <svg id="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden" role="img"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    </button>
+                </div>
+            </nav>
+        </header>
+
+        <!-- 
+          Main Content
+          Accessibility: Added id="main-content" for the skip link to target.
+          This is now the main landmark.
+        -->
+        <main id="main-content">
+            <!-- Hero Section -->
+            <section id="hero" aria-labelledby="hero-heading"> <!-- Accessibility: Added aria-labelledby -->
+                <div class="container">
+                    <!-- Hero Text -->
+                    <div class="hero-text">
+                        <span class="greeting">Hi, I am</span>
+                        <!-- 
+                          SEO & Accessibility: 
+                          - The <h1> is the most important heading. It contains the main keyword "Anurag Gautam".
+                          - Added id for aria-labelledby
+                        -->
+                        <h1 class="heading" id="hero-heading">
+                            Anurag Gautam!
+                        </h1>
+                        <p class="subtitle">
+                            A passionate Web Developer exploring the digital world, one line of code at a time.
+                        </p>
+                        <a href="#about" class="cta-button">
+                            My Story
+                        </a>
+                    </div>
+                    
+                    <!-- Hero Image -->
+                    <div class="hero-image">
+                        <!-- 
+                            Image tag removed. 
+                            This div is now an empty spacer for the desktop grid. 
+                        -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" aria-labelledby="about-heading"> <!-- Accessibility: Added aria-labelledby -->
+                <div class="container">
+                    <h2 id="about-heading"> <!-- Accessibility: Added id for aria-labelledby -->
+                        My Journey
+                    </h2>
+                    <div class="about-card">
+                        <h3>
+                            It all started back in 2019.
+                        </h3>
+                        <!-- 
+                          SEO: Content Update.
+                          I've naturally included your target keywords "Rawatbhata" and "Allen"
+                          into the narrative. This makes the content highly relevant to
+                          searches for "Anurag Gautam Allen" or "Anurag Gautam Rawatbhata".
+                        -->
+                        <p>
+                            As a student at Allen in my hometown of Rawatbhata, I had a curiosity about how websites were made. I wanted one of my own.
+                            <br>
+                            From that point on, my journey as Anurag Gautam, the Web Developer, began.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="site-footer" role="contentinfo"> <!-- Accessibility: Added role -->
+            <div class="container">
+                <p>
+                    &copy; <span id="current-year"></span> Anurag Gautam. All rights reserved.
+                </p>
+            </div>
+        </footer>
+
+    </div> <!-- End #page-content -->
+
+    <script>
+        // --- Dark Mode Toggle ---
+        (function() {
+            const themeToggle = document.getElementById('theme-toggle');
+            if (!themeToggle) return; // Exit if element not found
+
+            const sunIcon = document.getElementById('theme-icon-sun');
+            const moonIcon = document.getElementById('theme-icon-moon');
+            const html = document.documentElement;
+
+            function setTheme(theme) {
+                if (theme === 'dark') {
+                    html.classList.add('dark');
+                    if(moonIcon) moonIcon.classList.remove('hidden');
+                    if(sunIcon) sunIcon.classList.add('hidden');
+                    localStorage.theme = 'dark';
+                } else {
+                    html.classList.remove('dark');
+                    if(sunIcon) sunIcon.classList.remove('hidden');
+                    if(moonIcon) moonIcon.classList.add('hidden');
+                    localStorage.theme = 'light';
+                }
+            }
+
+            // On page load, set theme immediately
+            const preferredTheme = localStorage.theme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            setTheme(preferredTheme);
+
+            // Toggle theme on button click
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = html.classList.contains('dark') ? 'light' : 'dark';
+                setTheme(currentTheme);
+            });
+        })();
+
+        // --- Page Fade-in ---
         window.onload = function () {
-            setTimeout(function () {
-                document.getElementById("fadein").remove();
-            }, 1000);
+            const loader = document.getElementById('loader');
+            const pageContent = document.getElementById('page-content');
+            
+            // Start fade-out of loader
+            if(loader) {
+                loader.style.opacity = '0';
+                loader.style.visibility = 'hidden';
+            }
+
+            // After loader is hidden, fade-in content
+            setTimeout(() => {
+                if(pageContent) {
+                    pageContent.classList.add('fade-in');
+                    pageContent.style.opacity = '1';
+                }
+                // Remove loader from DOM
+                if(loader) {
+                    loader.remove();
+                }
+            }, 800); // Should match CSS transition duration
         };
+        
+        // --- Footer Current Year ---
+        (function() {
+            const yearSpan = document.getElementById('current-year');
+            if(yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+        })();
+
     </script>
 
-    <header>
-        <div class="name">Anurag Gautam</div>
-        <!-- <a href="mailto:kyle.web.in@gmail.com">
-            <div class="mail"><a href="mailto:kyle.web.in@gmail.com"><img style="width: 35px;"
-                        src="https://kyle-inc.github.io/resource/mail-icon.svg" alt="">
-            </div>
-        </a> -->
-    </header>
-
-    <div class="div-1">
-        <img src="pfp3.jpg" style="width: 300px; border-radius: 150px; margin-bottom: 60px;" alt="">
-        <br>
-        Hi, I am Anurag Gautam!
-    </div>
-
-    <div class="container-1">
-
-        <div class="content-1">
-            <h1>It all started back in 2019.</h1>
-            <br>
-            <h3>I had a curiosity how these websites are made and work, and wanted a one of mine too.
-                <br> And from that point of time my journey of Web Development began.
-            </h3>
-        </div>
-
-    </div>
-
-    <footer>
-        <div class="footercontainer">
-            <!-- <div class="line" style="margin-bottom: 25px;"></div> -->
-            <div class="social">
-                <a class="contact" href="mailto:kyle.web.in@gmail.com"><img class="contact-logo gmail" style="width: 40px;" src="https://kyle-inc.github.io/resource/gmail.png" alt="">
-                <a class="contact" href="https://www.linkedin.com/in/gautam-anurag"><img class="contact-logo linkedin" style="width: 40px;" src="https://kyle-inc.github.io/resource/linkedin.png" alt="">
-                <a class="contact" href=""><img class="contact-logo twitter" style="width: 40px;" src="https://kyle-inc.github.io/resource/twitter.png" alt="">
-            </div>
-        </div>
-    </footer>
-
-    <div class="floating-footer"></div>
-
 </body>
-
 </html>
